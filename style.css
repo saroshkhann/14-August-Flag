@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: black;
+}
+
+.flag {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+}
+
+.flag__white {
+  width: auto;
+  border: 10px;
+  background-color: #fff;
+  animation: moveToBottom 0.3s ease-in;
+}
+
+.flag__green {
+  width: auto;
+  height: 100vh;
+  background-color: darkgreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: moveToBottom 1s ease-in;
+}
+
+.flag__green--moon {
+  font-size: 30rem;
+  color: #fff;
+  animation: moveToLeft 1.5s ease-in;
+}
+
+.flag__green--star {
+  position: absolute;
+  font-size: 7rem;
+  color: #fff;
+  left: 58%;
+  bottom: 51%;
+  animation: moveToLeft 1.5s ease-in;
+  animation: rotateStar 4s ease-in-out infinite;
+}
+
+@keyframes moveToBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-600px);
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotateStar {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  25% {
+    transform: rotate(240deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(120deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
